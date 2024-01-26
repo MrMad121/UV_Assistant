@@ -52,7 +52,7 @@ def recognize_speech():
                 if text == f"open {site[0]}" or text == f"{site[0]} lava":
                     try:
                         # Open the website in a web browser
-                        # webbrowser.open(f"{site[1]}")
+                        webbrowser.open(f"{site[1]}")
                         print(Fore.GREEN + f"Assistant: Opening {site[0]} sir." + Style.RESET_ALL)
                         say(f"Opening {site[0]} sir.")
                     except:
@@ -65,18 +65,18 @@ def recognize_speech():
                     say(f"Opening {applications[i]} sir.")
                     break
                 elif text == "open monkey type" or text == "monkey type lava":
-                    # open_app("monkeytype")
+                    open_app("monkeytype")
                     say("Opening monkeytype sir.")
                     break
                 elif text == "open notepad plus plus" or text == "notepad plus plus lava":
-                    # open_app("notepad++")
+                    open_app("notepad++")
                     say("Opening notepad++ sir.")
                     break
 
             # Your existing code for playing music
             if "play" in text and "music" in text or "change" in text and "music" in text or text == "gane lava" or text == "gane badla":
                 randNum = random.randint(0, 23)
-                # os.system(f"start Music\{Songs[randNum]}.mp3")
+                os.system(f"start F:\Documents\GitHub\VoiceAI\.VoiceAI\Music\{Songs[randNum]}.mp3")
                 say(f"Starting music sir.")
                 print(Fore.GREEN + f"Playing {Songs[randNum]} sir." + Style.RESET_ALL)
 
@@ -167,7 +167,7 @@ if __name__ == "__main__":
             if "play" in text and "music" in text or "change" in text and "music" in text or text == "gane lava" or text == "gane badla":
                 # Play a random song from the list
                 randNum = random.randint(0, 23)
-                os.system(f"start Music\{Songs[randNum]}.mp3")
+                os.system(f"start F:\Documents\GitHub\VoiceAI\.VoiceAI\Music\{Songs[randNum]}.mp3")
                 say(f"Starting music sir.")
                 print(Fore.GREEN + f"Playing {Songs[randNum]} sir." + Style.RESET_ALL)
 
