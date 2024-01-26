@@ -1,0 +1,1 @@
+F:/Documents/GitHub/VoiceAI/.VoiceAI/.venv/Scripts/python.exe F:/Documents/GitHub/VoiceAI/.VoiceAI/UV_Assistant_Turbo.py

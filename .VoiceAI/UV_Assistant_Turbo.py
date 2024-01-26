@@ -11,7 +11,7 @@ import threading  # Import the threading module
 engine = pyttsx3.init()
 voice = engine.getProperty("voices")
 engine.setProperty("voice", voice[0].id)
-engine.setProperty('rate', 200)
+engine.setProperty('rate', 180)
 engine.setProperty("volume", 1.0)
 
 # Function to speak out the given text
@@ -22,12 +22,12 @@ def say(text):
 # Function to recognize speech input from the microphone
 def takeCommand():
     r = sr.Recognizer()
-    r.energy_threshold = 3000
-    r.pause_threshold = 0.5
+    r.energy_threshold = 8000
+    r.pause_threshold = 0.6
 
     with sr.Microphone() as source:
         try:
-            audio = r.listen(source)
+            audio = r.listen(source, timeout=2)
             print("Recognizing...")
             query = r.recognize_google(audio, language="en-in")
             print(f"User said: {query}")
@@ -59,9 +59,9 @@ def recognize_speech():
                         pass
 
             # Your existing code for applications
-            for i in range(0, 50):
+            for i in range(0, 51):
                 if text == f"open {applications[i]}" or text == f"{applications[i]} lava":
-                    # open_app(applications[i])
+                    open_app(applications[i])
                     say(f"Opening {applications[i]} sir.")
                     break
                 elif text == "open monkey type" or text == "monkey type lava":
@@ -116,7 +116,7 @@ if __name__ == "__main__":
                 ["new tab", "file:///F:/Documents/StartPage/index.html"], ["youtube studio", "https://studio.youtube.com"]]
 
         # List of applications to be opened with voice command
-        applications = ["android studio", "blender", "bluestacks", "calculator", "calendar", "camera", "chatgpt",
+        applications = ["android studio", "atom", "blender", "bluestacks", "calculator", "calendar", "camera", "chatgpt",
                         "copilot", "cortana", "discord", "duolingo", "droidcam", "excel", "foxit pdf reader", "gimp",
                         "github desktop", "google translate", "hitfilm", "inkscape", "pycharm community edition", "mail",
                         "maps", "microsoft clipchamp", "microsoft forms", "microsoft store", "microsoft to do",
@@ -148,7 +148,7 @@ if __name__ == "__main__":
                         pass
 
             # Check if the voice command matches an application to be opened
-            for i in range(0, 50):
+            for i in range(0, 51):
                 if text == f"open {applications[i]}" or text == f"{applications[i]} lava":
                     # Open the application
                     open_app(applications[i])

@@ -10,7 +10,7 @@ import os
 engine = pyttsx3.init()
 voice = engine.getProperty("voices")
 engine.setProperty("voice", voice[1].id)
-engine.setProperty('rate', 180)
+engine.setProperty('rate', 160)
 engine.setProperty("volume", 1.0)
 
 # Function to speak out the given text
@@ -22,19 +22,19 @@ def say(text):
 def takeCommand():
     r = sr.Recognizer()
 
-    r.energy_threshold = 2000
+    r.energy_threshold = 4000
 
     with sr.Microphone() as source:
         try:
             # Adjust pause threshold and timeout for better responsiveness
-            r.pause_threshold = 0.6
+            r.pause_threshold = 0.5
             audio = r.listen(source)
             print("Recognizing...")
             query = r.recognize_google(audio, language="en-in")
             print(f"User said: {query}")
             return query
         except sr.UnknownValueError:
-            print(Fore.LIGHTMAGENTA_EX + "Try again" + Style.RESET_ALL)
+            print(Fore.LIGHTMAGENTA_EX + "\nTry again" + Style.RESET_ALL)
         except sr.RequestError as e:
             print(Fore.RED + f"Assistant: Error with the speech recognition service; {e}" + Style.RESET_ALL)
             say("An error occurred")
