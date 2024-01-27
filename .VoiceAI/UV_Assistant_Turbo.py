@@ -7,6 +7,9 @@ import random
 import os
 import threading  # Import the threading module
 
+with open('./path.txt', 'r') as file:
+    content = file.read()
+
 # Initialize the text-to-speech engine
 engine = pyttsx3.init()
 voice = engine.getProperty("voices")
@@ -76,7 +79,7 @@ def recognize_speech():
             # Your existing code for playing music
             if "play" in text and "music" in text or "change" in text and "music" in text or text == "gane lava" or text == "gane badla":
                 randNum = random.randint(0, 23)
-                # os.system(f"start Music\{Songs[randNum]}.mp3")
+                # os.system(f"start {content}/.VoiceAI/Music/{Songs[randNum]}.mp3")
                 say(f"Starting music sir.")
                 print(Fore.GREEN + f"Playing {Songs[randNum]} sir." + Style.RESET_ALL)
 
@@ -167,7 +170,7 @@ if __name__ == "__main__":
             if "play" in text and "music" in text or "change" in text and "music" in text or text == "gane lava" or text == "gane badla":
                 # Play a random song from the list
                 randNum = random.randint(0, 23)
-                os.system(f"start Music\{Songs[randNum]}.mp3")
+                os.system(f"start {content}/.VoiceAI/Music/{Songs[randNum]}.mp3")
                 say(f"Starting music sir.")
                 print(Fore.GREEN + f"Playing {Songs[randNum]} sir." + Style.RESET_ALL)
 

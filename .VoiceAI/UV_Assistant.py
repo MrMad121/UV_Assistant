@@ -6,6 +6,9 @@ import pyttsx3
 import random
 import os
 
+with open('./path.txt', 'r') as file:
+    content = file.read()
+
 # Initialize the text-to-speech engine
 engine = pyttsx3.init()
 voice = engine.getProperty("voices")
@@ -61,7 +64,7 @@ if __name__ == "__main__":
                     "monkeytype", "notepad++", "obs studio", "onenote", "outlook", "paint3d", "photos", "powerpoint",
                     "publisher", "rapidtyping 5", "settings", "spotify", "terminal", "tlauncher", "unity hub",
                     "visual studio code", "voice recorder", "whatsapp", "winrar", "word", "wps office",
-                    "file explorer", "control panel", "youtube"]
+                    "file explorer", "control panel", "youtube", "microsoft edge"]
 
     # List of songs to be played with voice command
     Songs = ["Bhool_Bhulaiyya", "Brown_rung", "Char_botal_vodka", "Company", "Grind", "JagPal", "Jehde_nashe", "Jugnu",
@@ -106,7 +109,7 @@ if __name__ == "__main__":
         if "play" in text and "music" in text or "change" in text and "music" in text or text == "gane lava" or text == "gane badla":
             # Play a random song from the list
             randNum = random.randint(0, 23)
-            os.system(f"start Music\{Songs[randNum]}.mp3")
+            os.system(f"start {content}/.VoiceAI/Music/{Songs[randNum]}.mp3")
             say(f"Starting music sir.")
             print(Fore.GREEN + f"Playing {Songs[randNum]} sir." + Style.RESET_ALL)
 

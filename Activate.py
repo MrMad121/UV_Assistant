@@ -2,10 +2,15 @@ import tkinter as tk
 from tkinter import Text
 
 def submit():
-    with open("../UV_Assistant launcher.cmd", "w") as file:
+    with open("./UV_Assistant launcher.cmd", "w") as file:
         file.write(f"{input_path.get('1.0', 'end-1c')}/.VoiceAI/.venv/Scripts/python.exe {input_path.get('1.0', 'end-1c')}/.VoiceAI/UV_Assistant.py")
-    with open("../UV_Assistant_Turbo launcher.cmd", "w") as file:
+    with open("./UV_Assistant_Turbo launcher.cmd", "w") as file:
         file.write(f"{input_path.get('1.0', 'end-1c')}/.VoiceAI/.venv/Scripts/python.exe {input_path.get('1.0', 'end-1c')}/.VoiceAI/UV_Assistant_Turbo.py")
+    with open("./path.txt", "w") as file:
+        file.write(input_path.get("1.0", "end-1c"))
+
+
+    button.config(text= "Successful")
 
 window = tk.Tk()
 
