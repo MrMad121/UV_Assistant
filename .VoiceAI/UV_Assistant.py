@@ -106,7 +106,7 @@ if __name__ == "__main__":
         if "play" in text and "music" in text or "change" in text and "music" in text or text == "gane lava" or text == "gane badla":
             # Play a random song from the list
             randNum = random.randint(0, 23)
-            os.system(f"start F:\Documents\GitHub\VoiceAI\.VoiceAI\Music\{Songs[randNum]}.mp3")
+            os.system(f"start Music\{Songs[randNum]}.mp3")
             say(f"Starting music sir.")
             print(Fore.GREEN + f"Playing {Songs[randNum]} sir." + Style.RESET_ALL)
 
