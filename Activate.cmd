@@ -1,0 +1,1 @@
+ENTER_PATH_HERE/.VoiceAI/.venv/Scripts/python.exe ENTER_PATH_HERE/Activate.py

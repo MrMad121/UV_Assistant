@@ -1,1 +1,0 @@
-C:\Users\Admin\UV_Assistant/.VoiceAI/.venv/Scripts/python.exe C:\Users\Admin\UV_Assistant/.VoiceAI/UV_Assistant.py
